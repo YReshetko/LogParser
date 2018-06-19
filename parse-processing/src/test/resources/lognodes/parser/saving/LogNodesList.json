@@ -1,0 +1,182 @@
+[
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "261",
+    "name": "http-0.0.0.0-8080-1",
+    "message": "Log message 1",
+    "isStamped": true,
+    "id": 1,
+    "longDateTime":1001
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "262",
+    "name": "http-0.0.0.0-8080-2",
+    "message": "Log message 2",
+    "isStamped": true,
+    "id": 2,
+    "longDateTime":1002
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "263",
+    "name": "http-0.0.0.0-8080-3",
+    "message": "Log message 3",
+    "isStamped": true,
+    "id": 3,
+    "longDateTime":1003
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "264",
+    "name": "http-0.0.0.0-8080-1",
+    "message": "Log message 4",
+    "isStamped": true,
+    "id": 4,
+    "longDateTime":1004
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "265",
+    "name": "http-0.0.0.0-8080-3",
+    "message": "Log message 5",
+    "isStamped": true,
+    "id": 5,
+    "longDateTime":1005
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "266",
+    "name": "http-0.0.0.0-8080-3",
+    "message": "Log message 6",
+    "isStamped": true,
+    "id": 6,
+    "longDateTime":1006
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "267",
+    "name": "http-0.0.0.0-8080-3",
+    "message": "Log message 7",
+    "isStamped": true,
+    "id": 7,
+    "longDateTime":1007
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "268",
+    "name": "http-0.0.0.0-8080-1",
+    "message": "Log message 8",
+    "isStamped": true,
+    "id": 8,
+    "longDateTime":1008
+  },
+  {
+    "additionalEntries": [
+      {
+        "position": 4,
+        "value": "ERROR"
+      },
+      {
+        "position": 6,
+        "value": "com.my.package.MyClass"
+      }
+    ],
+    "date": "2018-01-18",
+    "time": "16:57:20",
+    "millisecond": "269",
+    "name": "http-0.0.0.0-8080-1",
+    "message": "Log message 9",
+    "isStamped": true,
+    "id": 9,
+    "longDateTime":1009
+  }
+]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error" strict="true" monitorInterval="30" dest="log/log4j.log">
+    <Properties>
+        <Property name="filename">log/ali.log</Property>
+        <Property name="level">debug</Property>
+    </Properties>
+    <Appenders>
+        <Appender type="File" name="File" fileName="${filename}">
+            <Layout type="PatternLayout">
+                <Pattern>%d [%p] [%c] [%t] %m%n</Pattern>
+            </Layout>
+        </Appender>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%p] [%c] [%t] %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.support.*" level="${level}" additivity="false">
+            <!--AppenderRef ref="File"/-->
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="${level}">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,52 @@
+group 'com.support'
+version '0.1'
+
+ext.junitPlatformVersion = '1.1.0'
+ext.junitJupiterVersion  = '5.1.0'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+    }
+}
+
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':LogStorageInterface')
+    compile project(':LogModel')
+    compile project(':PluginModel')
+    compile project(':BaseCore')
+    compile project(path: ':LogModel', configuration: "jaxb2")
+    compile project(path: ':PluginModel', configuration: "jaxb2")
+    testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+    testCompile("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    testRuntime("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
+    testCompile("org.junit.jupiter:junit-jupiter-params:${junitJupiterVersion}")
+}
+
+test {
+    useJUnitPlatform()
+    junitPlatform {
+        filters {
+            engines {
+                include 'junit-jupiter'
+            }
+            includeClassNamePattern '.*Test'//'.*SuitesJUnit[4-5]{1}'  '.*TestJUnit[4-5]{1}'
+        }
+    }
+    reports.junitXml.enabled = false
+    reports.html.enabled = false
+}

@@ -1,0 +1,24 @@
+group 'com.support'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+mainClassName="com.support.log.Runner"
+dependencies {
+    compile project(':LogModel')
+    compile project(':PluginModel')
+    compile project(':LogStorageInterface')
+    compile project(':LogPluginInterface')
+    compile project(':ParseProcessingCore')
+    compile project(':BaseCore')
+    compile project(path: ':LogModel', configuration: "jaxb2")
+    compile project(path: ':PluginModel', configuration: "jaxb2")
+}

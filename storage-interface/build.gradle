@@ -1,0 +1,17 @@
+group 'com.support'
+version '0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':LogModel')
+    compile project(':PluginModel')
+    compile project(path: ':LogModel', configuration: "jaxb2")
+    compile project(path: ':PluginModel', configuration: "jaxb2")
+}

@@ -1,0 +1,68 @@
+group 'com.support'
+version '0.1'
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/"}
+    }
+    dependencies {
+        classpath("gradle.plugin.com.ewerk.gradle.plugins:jaxb2-plugin:1.0.8")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: "com.ewerk.gradle.plugins.jaxb2"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    // default JAXB2 libs added by the plugin
+    jaxb2 'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.9.5'
+    jaxb2 'org.jvnet.jaxb2_commons:jaxb2-basics-ant:0.9.5'
+    jaxb2 'org.jvnet.jaxb2_commons:jaxb2-basics:0.9.5'
+
+    // default JAXB libs added by the plugin
+    jaxb2 'com.sun.xml.bind:jaxb-core:2.2.11'
+    jaxb2 'com.sun.xml.bind:jaxb-xjc:2.2.11'
+    jaxb2 'com.sun.xml.bind:jaxb-impl:2.2.11'
+}
+jaxb2 {
+    xjc {
+        'blocks' {
+            generatedSourcesDir = 'src/main/gen'
+            basePackage = 'com.support.log.model.block'
+            schema = 'src/main/resources/xsd/logBlock.xsd'
+        }
+    }
+    xjc {
+        'file-descriptor' {
+            generatedSourcesDir = 'src/main/gen'
+            basePackage = 'com.support.log.model.filedescroptor'
+            schema = 'src/main/resources/xsd/logFilesDescriptor.xsd'
+        }
+    }
+    xjc {
+        'node' {
+            generatedSourcesDir = 'src/main/gen'
+            basePackage = 'com.support.log.model.node'
+            schema = 'src/main/resources/xsd/logNode.xsd'
+        }
+    }
+    xjc {
+        'thread-descriptor' {
+            generatedSourcesDir = 'src/main/gen'
+            basePackage = 'com.support.log.model.thread.descriptor'
+            schema = 'src/main/resources/xsd/threadDescriptor.xsd'
+        }
+    }
+    xjc {
+        'thread-info' {
+            generatedSourcesDir = 'src/main/gen'
+            basePackage = 'com.support.log.model.thread.info'
+            schema = 'src/main/resources/xsd/threadsInfo.xsd'
+        }
+    }
+}

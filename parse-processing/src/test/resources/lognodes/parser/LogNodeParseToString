@@ -1,0 +1,18 @@
+{
+  "additionalEntries": [
+    {
+      "position": 4,
+      "value": "ERROR"
+    },
+    {
+      "position": 6,
+      "value": "com.my.package.MyClass"
+    }
+  ],
+  "date": "2018-01-18",
+  "time": "16:57:20",
+  "millisecond": "264",
+  "name": "http-0.0.0.0-8080-1",
+  "message": "Log message",
+  "isStamped": true
+}

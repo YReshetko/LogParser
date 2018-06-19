@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:beans.log.home.my.com"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            xmlns="urn:beans.log.home.my.com"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:complexType name="LogNode">
+        <xsd:sequence>
+            <xsd:element name="additionalEntries" maxOccurs="unbounded" type="LogEntry"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:long"/>
+        <xsd:attribute name="date" type="xsd:string"/>
+        <xsd:attribute name="time" type="xsd:string"/>
+        <xsd:attribute name="millisecond" type="xsd:string"/>
+        <xsd:attribute name="name" type="xsd:string"/> <!--Usually it's Thread name-->
+
+        <xsd:attribute name="message" type="xsd:string"/>
+        <xsd:attribute name="longDateTime" type="xsd:long"/>
+        <xsd:attribute name="isStamped" type="xsd:boolean" default="false"/>
+
+
+        <!--xsd:attribute name="logLevel" type="xsd:string"/>
+        <xsd:attribute name="thread" type="xsd:string"/>
+        <xsd:attribute name="classPackage" type="xsd:string"/-->
+    </xsd:complexType>
+    <xsd:complexType name="LogEntry">
+        <xsd:attribute name="position" type="xsd:int"/>
+        <xsd:attribute name="value" type="xsd:string"/>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,18 @@
+{
+  "additionalEntries": [
+    {
+      "position": 6,
+      "value": "com.test.packege.SomeClass"
+    },
+    {
+      "position": 4,
+      "value": "DEBUG"
+    }
+  ],
+  "date": "2018-01-31",
+  "time": "21:00:00",
+  "millisecond": "123",
+  "name": "ThreadName",
+  "message": "Some log message",
+  "isStamped": true
+}
