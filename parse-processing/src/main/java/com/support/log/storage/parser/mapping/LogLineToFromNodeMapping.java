@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public enum LogLineToFromNodeMapping {
+enum LogLineToFromNodeMapping {
     DATE(true) {
         @Override
         BiVoidFunction<LogNode, String> getStringToLogNodeSpecificMapper() {
@@ -52,12 +52,14 @@ public enum LogLineToFromNodeMapping {
     }, DEFAULT(false) {
         @Override
         BiVoidFunction<LogNode, String> getStringToLogNodeSpecificMapper() {
-            return null;
+            throw new UnsupportedOperationException(
+                    "The DEFAULT LogLineToFromNodeMapping doesn't support StringToLogNode specific mapper");
         }
 
         @Override
         BiVoidFunction<List<String>, LogNode> getLogNodeToStringSpecificMapper() {
-            return null;
+            throw new UnsupportedOperationException(
+                    "The DEFAULT LogLineToFromNodeMapping doesn't support LogNodeToString specific mapper");
         }
     };
 
@@ -99,7 +101,7 @@ public enum LogLineToFromNodeMapping {
     }
 
     private static final Map<String, LogLineToFromNodeMapping> mappersCache = new HashMap<>();
-    public static LogLineToFromNodeMapping getLogMapperByPatternName(String patternName){
+    static LogLineToFromNodeMapping getLogMapperByPatternName(String patternName){
         LogLineToFromNodeMapping mapper = createAndCacheMapperIfAbsent(patternName);
         return mapper;
     }
@@ -107,9 +109,18 @@ public enum LogLineToFromNodeMapping {
     private static LogLineToFromNodeMapping createAndCacheMapperIfAbsent(String patternName){
         LogLineToFromNodeMapping mapper = mappersCache.get(patternName);
         if (mapper == null){
-            mapper = Stream.of(LogLineToFromNodeMapping.values()).filter(currentMapper -> currentMapper.name().equals(patternName.toUpperCase())).findFirst().orElse(DEFAULT);
+            mapper = Stream
+                    .of(LogLineToFromNodeMapping.values())
+                    .filter(currentMapper -> currentMapper.name().equals(patternName.toUpperCase()))
+                    .findFirst()
+                    .orElse(DEFAULT);
             mappersCache.put(patternName, mapper);
         }
         return mapper;
+    }
+
+    @FunctionalInterface
+    private interface BiVoidFunction<K, V>{
+        void apply(K k, V v);
     }
 }
